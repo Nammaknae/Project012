@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project012 피싱 위험성 교육</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="login-screen" class="screen screen-active" aria-labelledby="login-title">
+        <div class="training-ribbon">보안 교육용 모의 로그인</div>
+        <div class="login-wrap">
+          <h1 id="login-title" class="brand-title">GREEN PORTAL</h1>
+          <form id="login-form" class="login-panel">
+            <label class="field-label" for="identifier">아이디</label>
+            <input id="identifier" name="identifier" autocomplete="username" placeholder="아이디 또는 이메일" required />
+
+            <label class="field-label" for="password">비밀번호</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="비밀번호" required />
+
+            <button class="primary-button" type="submit">로그인</button>
+          </form>
+          <p class="notice-text">실제 계정 정보를 입력하지 마세요. 이 화면은 피싱 위험성 교육을 위한 시뮬레이션입니다.</p>
+        </div>
+      </section>
+
+      <section id="warning-screen" class="screen" aria-labelledby="warning-title">
+        <div class="content-band warning-band">
+          <p class="eyebrow">Smishing & Phishing Simulation</p>
+          <h2 id="warning-title">방금 입력한 정보가 공격자에게 전달될 수 있습니다.</h2>
+          <p>
+            문자 메시지, 메신저 링크, 검색 광고를 통해 접속한 가짜 로그인 페이지는 사용자의 아이디와 비밀번호를 서버로 전송할 수 있습니다.
+            주소창의 도메인, HTTPS 인증서, 공식 앱 여부를 확인하고 의심스러운 링크에서는 절대 로그인하지 않아야 합니다.
+          </p>
+          <div class="action-row">
+            <button id="view-captures-button" class="primary-button" type="button">탈취 정보 확인</button>
+            <button id="back-from-warning-button" class="secondary-button" type="button">처음으로</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="captures-screen" class="screen" aria-labelledby="captures-title">
+        <div class="content-band data-band">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Database Records</p>
+              <h2 id="captures-title">모의 탈취 정보 확인</h2>
+            </div>
+            <button id="refresh-button" class="icon-button" type="button" aria-label="새로고침">↻</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>시간</th>
+                  <th>아이디</th>
+                  <th>비밀번호 표시</th>
+                  <th>길이</th>
+                  <th>IP</th>
+                </tr>
+              </thead>
+              <tbody id="captures-table-body"></tbody>
+            </table>
+            <p id="empty-message" class="empty-message">저장된 정보가 없습니다.</p>
+          </div>
+
+          <div class="action-row">
+            <button id="delete-button" class="danger-button" type="button">정보 삭제</button>
+            <button id="home-button" class="secondary-button" type="button">처음으로 돌아가기</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>
