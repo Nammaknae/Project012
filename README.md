@@ -173,16 +173,20 @@ Synology NAS에서는 DSM 역방향 프록시를 다음처럼 설정합니다.
 ## 9. 실행 방법
 
 개발 PC에서 cmd창으로 ssh를 이용해서 nas에 접속해야합니다.
+```text
 PS C:\Users\Project012> ssh -p 포트번호 호스트이름@maknae.synology.me
 호스트이름@maknae.synology.me's password:
 호스트이름@maknae_st:/docker$ git clone https://github.com/Nammaknae/phishing_app_flutter.git
 호스트이름@maknae_st:/docker/Project012$ docker compose -d 
-
+```
 여기서 docker compose -d가 deny될경우 권한 설정으로 인하여 거부가 된것이니
 sudo docker compose -d 를 하여 관리자 권한으로 실행되도록 해야합니다.
+
+```text 
  ✔ Container project012-db        Healthy                                                                       
  ✔ Container project012-backend   Healthy                                                                       
  ✔ Container project012-frontend  Healthy (Started도 가능)
+```
 라고 뜨면 실행 완료
 
 ## 10. 보안 및 윤리적 제한
