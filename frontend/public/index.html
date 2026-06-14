@@ -3,25 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project012 피싱 위험성 교육</title>
+    <title>보안 교육 프로젝트</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <main class="app-shell">
-      <section id="login-screen" class="screen screen-active" aria-labelledby="login-title">
-        <div class="training-ribbon">보안 교육용 모의 로그인</div>
+      <section id="login-screen" class="screen screen-active portal-login-screen" aria-labelledby="login-title">
+        <div class="training-ribbon">본 화면은 보안 교육용 모의 시뮬레이션입니다. 실제 비밀번호를 입력하지 마세요.</div>
+
         <div class="login-wrap">
-          <h1 id="login-title" class="brand-title">GREEN PORTAL</h1>
+          <header class="portal-header">
+            <p class="portal-kicker">Security Awareness Portal</p>
+            <h1 id="login-title" class="brand-title">보안 교육 프로젝트</h1>
+          </header>
+
           <form id="login-form" class="login-panel">
-            <label class="field-label" for="identifier">아이디</label>
-            <input id="identifier" name="identifier" autocomplete="username" placeholder="아이디 또는 이메일" required />
+            <div class="input-stack">
+              <div class="input-row">
+                <label class="field-label" for="identifier">ID 또는 이메일</label>
+                <input id="identifier" name="identifier" autocomplete="username" placeholder="ID 또는 이메일" required />
+              </div>
 
-            <label class="field-label" for="password">비밀번호</label>
-            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="비밀번호" required />
+              <div class="input-row">
+                <label class="field-label" for="password">비밀번호</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" placeholder="비밀번호" required />
+              </div>
+            </div>
 
-            <button class="primary-button" type="submit">로그인</button>
+            <button class="primary-button login-button" type="submit">로그인</button>
+
+            <div class="login-meta">
+              <label class="keep-login">
+                <input type="checkbox" />
+                <span>로그인 상태 유지</span>
+              </label>
+              <div class="helper-links" aria-label="로그인 도움말">
+                <a href="#login-screen">ID 찾기</a>
+                <span aria-hidden="true">|</span>
+                <a href="#login-screen">비밀번호 찾기</a>
+              </div>
+            </div>
           </form>
-          <p class="notice-text">실제 계정 정보를 입력하지 마세요. 이 화면은 피싱 위험성 교육을 위한 시뮬레이션입니다.</p>
+
+          <nav class="portal-links" aria-label="포털 보조 메뉴">
+            <a href="#login-screen">회원가입</a>
+            <span aria-hidden="true">|</span>
+            <a href="#login-screen">고객센터</a>
+            <span aria-hidden="true">|</span>
+            <a href="#login-screen">보안 안내</a>
+          </nav>
         </div>
       </section>
 
